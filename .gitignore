@@ -1,0 +1,27 @@
+# OCR 缓存与生成的 wikitext（可能是整本书的正文，别提交）
+out/
+
+# 本地渲图与下载的扫描件
+img/
+*.pdf
+*.djvu
+*.jpg
+*.jpeg
+*.png
+
+# pywikibot 凭据与状态（正常在 repo 外，这里是双保险）
+user-config.py
+user-password.py
+pywikibot.lwp
+throttle.ctrl
+apicache*/
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# macOS
+.DS_Store
