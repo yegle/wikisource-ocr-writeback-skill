@@ -78,17 +78,19 @@ OCR 用的是 [ocr.wmcloud.org](https://ocr.wmcloud.org)（Wikimedia 官方服�
 
 ### 二、勾哪些权限
 
-按 Special:BotPasswords 上的中文标签：
+按 Special:BotPasswords 上的标签（中英文对照）：
 
 | 权限 | 要不要 | 为什么 |
 |---|---|---|
-| 基本权限 | 自动包含 | 读页面、拿 token |
-| **编辑存在的页面** | **必须** | 改已有的 `Page:` 页 |
-| **创建、编辑和移动页面** | **必须** | `Page:` 页绝大多数是新建的，少这条会在建页时失败 |
-| 大量操作（机器人）访问权限 | 不用 | 只有帐号真有 bot 标记时才有意义 |
+| 基本权限 (*Basic rights*) | 自动包含 | 读页面、拿 token |
+| **编辑存在的页面** (*Edit existing pages*) | **必须** | 修改已有的 `Page:` 或 `Index:` 页 |
+| **创建、编辑和移动页面** (*Create, edit, and move pages*) | **必须** | 新建 `Index:` 目录页与绝大多数初次录入的 `Page:` 页面 |
+| 大量操作（机器人）访问权限 (*High-volume editing*) | 不用 | 只有帐号真有 bot 标记时才有意义 |
 | 编辑受保护的页面 / 上传新文件 / 删除 | **别勾** | 这份 skill 完全用不到 |
 
-**只勾中间那两条**就够。权限给少了顶多某一步报错，给多了是白白扩大泄露后的破坏面。
+**必须同时勾选「编辑存在的页面」和「创建、编辑和移动页面」两条权限**。权限给少了某一步会报错，给多了则是白白扩大泄露后的破坏面。
+
+> ⚠️ **常见报错**：如果漏勾「创建、编辑和移动页面」，在新建 `Index:` 目录页或初次写回 `Page:` 页面时会报 `cantcreate: You do not have permission to create new pages`（或 `User not authorized to create new pages`）错误。若遇到此报错，直接回到 `Special:BotPasswords` 页面编辑该 BotPassword 补充勾选即可，无需重置或更换密码。
 
 ### 三、两个配置文件
 
